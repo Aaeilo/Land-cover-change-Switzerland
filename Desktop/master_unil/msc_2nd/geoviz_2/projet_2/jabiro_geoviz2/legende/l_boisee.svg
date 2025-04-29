@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg"> 
+	    <g style="font-size: 14px; font-family: sans-serif; font-weight: bold; fill: #858484;">
+        <text x="0" y="20">
+            <tspan>Proportions de surfaces</tspan>
+            <tspan x="0" y="40">boisées en hectare (%)</tspan>
+            </text>
+    </g>
+    
+    <g transform="translate(0,40), scale(1.08)">            
+        <rect x="0" y="10" width="50" height="20" fill="#006d2c" stroke="grey" strokeWidth="0.7" />
+        <rect x="0" y="35" width="50" height="20" fill="#31a354" stroke="grey" strokeWidth="0.7" />
+        <rect x="0" y="60" width="50" height="20" fill="#74c476" stroke="grey" strokeWidth="0.7" />
+        <rect x="0" y="85" width="50" height="20" fill="#bae4b3" stroke="grey" strokeWidth="0.7" />
+        <rect x="0" y="110" width="50" height="20" fill="#edf8e9" stroke="grey" strokeWidth="0.7" />
+        <g style="font-size: 12px; font-family: sans-serif; fill: #858484;">
+            <text x="60" y="22.5">> = 38.7</text>
+            <text x="60" y="47.5">> = 32.3</text>
+            <text x="60" y="72.5">> = 25.7</text>
+            <text x="60" y="97.5">> = 12.6</text>
+            <text x="60" y="122.5">Moins de 12.6</text>
+        </g>
+
+    </g>
+
+</svg>

@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <meta charset="utf8" />
+    <title>Evolution de se l'occupation du sol selon les 4 domaines principaux</title>
+
+<!-- Load Jquery and Leafleat -->
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+<!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Load Nouislider -->
+    <link href="noUiSlider-15.7.0/dist/nouislider.css" rel="stylesheet">
+    <script src="noUiSlider-15.7.0/dist/nouislider.js"></script>
+
+    <!-- Load des fichiers CSS et JS(les données) -->
+     <link rel="stylesheet" href="style.css" />
+     <script src='geodata/canton.js'></script>
+
+
+   </head>
+   <body>
+    <!-- Titre notre page HTML -->
+     <h2>Evolution de l'occupation du sol selon les 4 domaines principaux</h2>
+     <p class="tuto_2"><i>Cliquez sur l'un des cantons pour obtenir des informations supplémentaire.</i></p>
+
+     <div class="main">
+
+       <!-- Carte intéractive -->
+      <div id="map" class="carte-interactive"></div>
+
+      <!-- Le bandeau à gauche de l'écran-->
+      <div class="bandeau">
+
+        <!-- Création des boutons radios pour la sélection des couches en fonction du type de sol-->
+        <div class ="typologie">
+          <h4>Occupations des sols :</h4>
+          <p class="tuto_1"><i>Sélectionnez l'option de votre choix</i></p>
+        <ol>
+          <li><label><input type="radio" name="typesol" value="urbain" checked onchange="changeTypesol('urbain')" onclick="showGroup(['Urbain'])" /> Urbain</label></li>
+          <li><label><input type="radio" name="typesol" value="agricole" onchange="changeTypesol('agricole')" onclick="showGroup(['Agricole'])"/> Agricole</label></li>
+          <li><label><input type="radio" name="typesol" value="boisees" onchange="changeTypesol('boisees')" onclick="showGroup(['Boisee'])"/> Boisée</label></li>
+          <li><label><input type="radio" name="typesol" value="improductives" onchange="changeTypesol('improductives')" onclick="showGroup(['Improductive'])"/> Improductive</label></li>
+        </ol>
+        </div>
+
+        <hr />
+
+        <!--Création du curseur temporel -->
+        <h4>Curseur temporel</h4>
+        <p class="tuo_1"><i>Sélectionnez l'année sur le curseur temporel</i></p>
+        <div style="margin-bottom: 50px" class="slider-styled" id="slider-round"></div>
+
+        <hr />
+        
+        <!-- Les légendes -->
+        <div id="hideables" class="legende">
+          <object id = "Urbain" data="legende/l_urbain.svg" type="image/svg+xml"></object>
+          <object id = "Agricole" data="legende/l.agricole.svg" type="image/svg+xml"></object>
+          <object id = "Boisee" data="legende/l_boisee.svg" type="image/svg+xml"></object>
+          <object id = "Improductive" data="legende/l_improductive.svg" type="image/svg+xml"></object>
+        </div>
+
+        <!-- Les sources -->
+        <div class="sources">Données: © OFS - Statistique de la superficie, Neuchâtel 2021
+          <br>
+          Fond de carte: © Swisstopo, 2022
+          <br>
+          Auteur: Jabiro Ntamushobora, 2023
+        </div>        
+
+      </div>
+
+      <!-- Création de la barre d'info à droite -->
+      <div id="info" class="info" style="left: 400vw;">
+        <div id="titre" class="titre"></div>
+        <div id="barplot"></div>
+
+     <!-- Chargement du fichier externe JS (programmation) -->
+     <script src="script.js"></script>
+   </body>
+
+   </html>
+
